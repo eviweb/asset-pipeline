@@ -88,30 +88,49 @@ return array(
             new Codesleeve\AssetPipeline\Filters\MinifyJS('production')
         )
     ),
-
+    
     /*
-      |--------------------------------------------------------------------------
-      | cache
-      |--------------------------------------------------------------------------
-      |
-      | This allows us to turn on/off the asset cache if we choose to do so.
-      |
-      | When cache is set to true we will cache assets that are served. Caching
-      | is probably a good idea to turn on in your production environment as it
-      | will dramatically improve speed.
-      |
-      | NOTE: anytime you change cache config you need to run
-      |
-      |		php artisan assets:clean
-      |
-      | Your system admins can use assets:clean anytime they
-      | update servers where there have been changes to assets
-      |
-      | When set to null, cache will be true whenever laravel environment is
-      | set to 'production' but false otherwise
-      |
-     */
-    'cache' => null,
+	|--------------------------------------------------------------------------
+	| filter types
+	|--------------------------------------------------------------------------
+	|
+	| set file types to belong to an asset meta type category :
+    |   - javascripts
+    |   - stylesheets
+    |   - others
+    |
+	| NOTE: default filter types are automatically filtered
+    |
+	*/
+    'filtertypes' => array(
+        'javascripts' => array(),
+        'stylesheets' => array(),
+        'others' => array(),
+    ),
+    
+	/*
+	|--------------------------------------------------------------------------
+	| cache
+	|--------------------------------------------------------------------------
+	|
+	| This allows us to turn on/off the asset cache if we choose to do so.
+	|
+	| When cache is set to true we will cache assets that are served. Caching 
+	| is probably a good idea to turn on in your production environment as it
+	| will dramatically improve speed. 
+	|
+	| NOTE: anytime you change cache config you need to run	
+	|
+	|		php artisan assets:clean
+	|
+	| Your system admins can use assets:clean anytime they 
+	| update servers where there have been changes to assets
+	|
+	| When set to null, cache will be true whenever laravel environment is
+	| set to 'production' but false otherwise
+	|
+	*/
+	'cache' => null,
 
     /*
       |--------------------------------------------------------------------------
